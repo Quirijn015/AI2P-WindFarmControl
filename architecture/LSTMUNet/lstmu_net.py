@@ -1,14 +1,14 @@
 from torch import nn
 import torch
 
-from windspeedLSTM.deconv import DeConvNet
-from windspeedLSTM.custom_unet import CustomUNet
+from architecture.LSTMUNet.deconv import DeConvNet
+from  architecture.LSTMUNet.custom_unet import CustomUNet
 
 
-class WindspeedLSTM(nn.Module):
+class LSTMUNet(nn.Module):
     def __init__(self, sequence_length):
-        super(WindspeedLSTM, self).__init__()
-        center_nn = WindspeedLSTMHelper()
+        super(LSTMUNet, self).__init__()
+        center_nn = LSTMUNetHelper()
         self.unet = CustomUNet(sequence_length, sequence_length, center_nn)
 
     def forward(self, x):
@@ -16,9 +16,9 @@ class WindspeedLSTM(nn.Module):
         return x
 
 
-class WindspeedLSTMHelper(nn.Module):
+class LSTMUNetHelper(nn.Module):
     def __init__(self):
-        super(WindspeedLSTMHelper, self).__init__()
+        super(LSTMUNetHelper, self).__init__()
 
         self.flatten = nn.Flatten(start_dim=2)
         self.lstm = nn.LSTM(64, 64)

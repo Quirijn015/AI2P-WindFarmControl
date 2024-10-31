@@ -6,8 +6,8 @@ import numpy as np
 import torch
 import torch.nn as nn
 
-from windspeedLSTM.windspeedLSTM import (WindspeedLSTM)
-from experiments.futureWindspeedLSTM.WindspeedMapDataset import create_data_loaders, get_dataset
+from architecture.LSTMUNet.lstmu_net import (LSTMUNet)
+from experiments.LSTMUNet_experiments.WindspeedMapDataset import create_data_loaders, get_dataset
 from utils.preprocessing import resize_windspeed
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -48,11 +48,8 @@ def run():
     dataset = get_dataset(config["dataset_dirs"], sequence_length, transform)
 
     train_loader, val_loader, test_loader = create_data_loaders(dataset, batch_size,Random=False)
-    model = WindspeedLSTM(sequence_length).to(device)
+    model = LSTMUNet(sequence_length).to(device)
 
-    print(len(train_loader))
-    print(len(val_loader))
-    print(len(test_loader))
 
     output_folder = create_output_folder(case)
 
