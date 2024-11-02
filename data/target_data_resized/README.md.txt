@@ -1,0 +1,1 @@
+This map contains the 128 by 128 windflow grids for all three cases with and without wake steering, functioning as targets. 
