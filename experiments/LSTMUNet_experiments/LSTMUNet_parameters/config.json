@@ -1,0 +1,1 @@
+{"case": 123, "dataset_dirs": ["../../Data/target_data_resized/Case_01/postProcessing_BL", "../../Data/target_data_resized/Case_01/postProcessing_LuT2deg_internal", "../../Data/target_data_resized/Case_02/postProcessing_BL", "../../Data/target_data_resized/Case_02/postProcessing_LuT2deg_internal"], "sequence_length": 50, "batch_size": 1, "scale": [128, 128]}
