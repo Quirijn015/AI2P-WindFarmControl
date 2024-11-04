@@ -16,12 +16,12 @@ def load_config(case):
     return {
         "case": case,
         "dataset_dirs": [
-            f"../../Data/target_data_resized/Case_01/postProcessing_BL",
-            f"../../Data/target_data_resized/Case_01/postProcessing_LuT2deg_internal",
-            f"../../Data/target_data_resized/Case_02/postProcessing_BL",
-            f"../../Data/target_data_resized/Case_02/postProcessing_LuT2deg_internal",
-            # f"../../Data/target_data_resized/Case_03/postProcessing_BL",
-            # f"../../Data/target_data_resized/Case_03/postProcessing_LuT2deg_internal",
+            f"../../data/Case_01/measurements_flow/postProcessing_BL/windspeedMapScalars",
+            f"../../data/Case_01/measurements_flow/postProcessing_LuT2deg_internal/windspeedMapScalars",
+            f"../../data/Case_02/measurements_flow/postProcessing_BL/windspeedMapScalars",
+            f"../../data/Case_02/measurements_flow/postProcessing_LuT2deg_internal/windspeedMapScalars",
+            # f"../../data/Case_03/measurements_flow/postProcessing_BL/windspeedMapScalars",
+            # f"../../data/Case_03/measurements_flow/postProcessing_LuT2deg_internal/windspeedMapScalars",
             ],
         "sequence_length": 50,
         "batch_size": 1,
